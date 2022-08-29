@@ -5,10 +5,6 @@ const loadCountries = () => {
     .catch((error) => console.log(error));
 };
 
-const loadCountryDetails = () => {
-  console.log("Loading countries...");
-};
-
 const displayCountries = (countries) => {
   const countryContainer = document.getElementById("countries-container");
   // for (const country of countries) {
@@ -33,11 +29,39 @@ const displayCountries = (countries) => {
         }</p>
         <p>Population: ${countries[i].population}</p>
         <p>Region: ${countries[i].region}</p> 
-        <button onclick="loadCountryDetails()">Show details</button>
+        <button onclick="loadCountryDetails('${
+          countries[i].cca2
+        }')" class="show-details-btn">Show details</button>
       </div>
     `;
     countryContainer.appendChild(countryDiv);
   }
+};
+
+const loadCountryDetails = (code) => {
+  const url = `https://restcountries.com/v3.1/alpha/${code}`;
+  // console.log("Loading countries...", code);
+  // console.log(url);
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => displayCountryDetails(data[0]))
+    .catch((error) => console.log(error));
+};
+
+const displayCountryDetails = (country) => {
+  const countryDetails = document.getElementById("country-details");
+  countryDetails.innerHTML = `
+  <div class="flag">
+  <img src="${country.flags.png}" alt="${country.name.common}">
+</div>
+<div class="info">
+  <h2>Country name: ${country.name.common}</h2>
+  <p>Capital: ${country.capital}</p>
+  <p>Capital: ${country.capital ? country.capital[0] : "No capital"}</p>
+  <p>Population: ${country.population}</p>
+  <p>Region: ${country.region}</p>
+</div>
+  `;
 };
 
 loadCountries();

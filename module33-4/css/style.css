@@ -1,17 +1,32 @@
-* {
+/* * {
   box-sizing: border-box;
 }
 body {
   background-color: #393b3c;
   color: white;
-}
+} */
 #countries-container {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 15px;
 }
 .country {
-  border: 1px solid rgb(192, 190, 190);
+  /* border: 2px solid rgb(192, 190, 190); */
+  border: 2px solid salmon;
   border-radius: 14px;
-  /* padding: 1px; */
+  /* padding: 20px; */
+}
+.flag img {
+  border-radius: 10px 10px 0 0;
+}
+.info {
+  padding: 15px;
+}
+.show-details-btn {
+  border: none;
+  border-radius: 5px;
+  padding: 15px 20px;
+  cursor: pointer;
+  background-color: tomato;
+  color: white;
 }
