@@ -10,3 +10,5 @@
 - - rest countries api
 - - https://restcountries.com/
 - - https://restcountries.com/v3.1/all
+- 33-4 (advanced) Call dynamic API, load dynamic data to display
+- - 

@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #393b3c;
+  color: white;
+}
+#countries-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+.country {
+  border: 1px solid rgb(192, 190, 190);
+  border-radius: 14px;
+  /* padding: 1px; */
+}
