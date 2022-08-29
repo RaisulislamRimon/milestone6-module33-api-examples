@@ -11,4 +11,6 @@
 - - https://restcountries.com/
 - - https://restcountries.com/v3.1/all
 - 33-4 (advanced) Call dynamic API, load dynamic data to display
-- - 
+- 33-5 Explore meal db api and create card for each meal
+- - https://www.themealdb.com/
+- -
